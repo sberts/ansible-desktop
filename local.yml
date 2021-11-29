@@ -8,12 +8,21 @@
     package:
       name:
         - htop
+        - bashtop
         - tmux
         - vim-nox
         - xinit
         - i3
         - powerline
+        - python3-pip
+        - nodejs
 
   - name: install chrome
     apt:
       deb: https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+  - name: install bpytop
+    pip:
+      name: bpytop
+      
+ 
