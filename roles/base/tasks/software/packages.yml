@@ -1,0 +1,16 @@
+- name: install base packages
+  tags: packages
+  package:
+    name:
+      - htop
+      - tmux
+      - vim-nox
+      - xinit
+      - i3
+      - powerline
+      - python3-pip
+      - nodejs
+  
+- name: install bpytop
+  pip:
+    name: bpytop

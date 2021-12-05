@@ -3,25 +3,15 @@
   connection: local
   become: true
 
-  tasks:
-  - name: install packages
-    package:
-      name:
-        - htop
-        - tmux
-        - vim-nox
-        - xinit
-        - i3
-        - powerline
-        - python3-pip
-        - nodejs
+  pre_tasks:
+    - name: pre-run | update cache
+      tags: always
+      apt: update_cache=yes
+      changed_when: False
+      when: ansible_distribution in ["Debian", "Ubuntu"]
 
-  - name: install chrome
-    apt:
-      deb: https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-
-  - name: install bpytop
-    pip:
-      name: bpytop
-      
- 
+- hosts: all
+  tags: base
+  become: true
+  roles:
+    - base
