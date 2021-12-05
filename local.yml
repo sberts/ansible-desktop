@@ -10,8 +10,14 @@
       changed_when: False
       when: ansible_distribution in ["Debian", "Ubuntu"]
 
-- hosts: localhost
+- hosts: all
   tags: base
   become: true
   roles:
     - base
+
+- hosts: workstation
+  tags: workstation
+  become: true
+  roles:
+    - workstation
