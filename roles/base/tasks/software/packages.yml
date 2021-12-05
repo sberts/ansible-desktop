@@ -8,7 +8,7 @@
       - python3-pip
       - nodejs
   
-- name: install bpytop
+- name: install base pip packages
   pip:
     name:
       - bpytop
@@ -18,3 +18,13 @@
   lineinfile:
     path: /home/ubuntu/.bashrc
     line: . /usr/local/lib/python3.8/dist-packages/powerline/bindings/bash/powerline.sh
+
+- name: add powerline daemon to tmux config
+  lineinfile:
+    path: /home/ubuntu/.tmux.conf
+    line: run-shell "powerline-daemon -q"
+
+- name: add powerline to tmux config
+  lineinfile:
+    path: /home/ubuntu/.tmux.conf
+    line: source "/usr/local/lib/python3.8/dist-packages/powerline/bindings/tmux/powerline.conf"
