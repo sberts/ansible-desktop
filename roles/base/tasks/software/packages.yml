@@ -5,8 +5,6 @@
       - htop
       - tmux
       - vim-nox
-      - xinit
-      - i3
       - python3-pip
       - nodejs
   

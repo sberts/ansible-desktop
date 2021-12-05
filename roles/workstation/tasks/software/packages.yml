@@ -7,6 +7,7 @@
       - keepassxc
       - evince
       - jmtpfs
+      - powerline-fonts
 
 - name: install chrome
   apt:
