@@ -7,10 +7,16 @@
       - vim-nox
       - xinit
       - i3
-      - powerline
       - python3-pip
       - nodejs
   
 - name: install bpytop
   pip:
-    name: bpytop
+    name:
+      - bpytop
+      - powerline-status
+
+- name: insert powerline.sh into .bashrc
+  lineinfile:
+    path: /home/ubuntu/.bashrc
+    line: . /usr/local/lib/python3.8/dist-packages/powerline/bindings/bash/powerline.sh
