@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: localhost
   tags: always
   become: true
 
@@ -10,7 +10,7 @@
       changed_when: False
       when: ansible_distribution in ["Debian", "Ubuntu"]
 
-- hosts: all
+- hosts: localhost
   tags: base
   become: true
   roles:
