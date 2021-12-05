@@ -1,0 +1,13 @@
+- name: install workstation packages
+  tags: packages
+  package:
+    name:
+      - xinit
+      - i3
+      - keepassxc
+      - evince
+      - jmtpfs
+
+- name: install chrome
+  apt:
+    deb: https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
