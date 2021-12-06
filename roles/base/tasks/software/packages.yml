@@ -2,6 +2,7 @@
   tags: packages
   package:
     name:
+      - build-essential
       - htop
       - tmux
       - vim-nox

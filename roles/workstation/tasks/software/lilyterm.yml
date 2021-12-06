@@ -3,10 +3,27 @@
   get_url:
     url: https://lilyterm.luna.com.tw/file/lilyterm-0.9.9.2.tar.gz
     dest: /usr/local/src/lilyterm-0.9.9.2.tar.gz
+  register: lilyterm_source
 
 - name: extract lilyterm source
   tags: lilyterm
-  ansible.builtin.unarchive:
+  unarchive:
     src: /usr/local/src/lilyterm-0.9.9.2.tar.gz
     dest: /usr/local/src
     remote_src: yes
+  when: lilyterm_source.changed
+  register: lilyterm_source_unpack
+
+- name: configure lilyterm source
+  command: ./configure
+  args:
+    chdir: /usr/local/src/lilyterm-0.9.9.2
+  when: lilyterm_source_unpack|changed
+  register: lilyterm_configure
+
+- name: install lilyterm
+  become: yes
+  shell: make && make install
+  args:
+    chdir: /usr/local/src/lilyterm-0.9.9.2
+  when: lilyterm_configure|changed
