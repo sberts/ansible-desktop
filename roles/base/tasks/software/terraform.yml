@@ -9,8 +9,7 @@
   tags: terraform
   unarchive:
     src: /usr/local/src/terraform_1.0.11_linux_amd64.zip
-    dest: /usr/local/src
+    dest: /usr/local/bin
     remote_src: yes
   when: terraform_source.changed
-  register: terraform_source_unpack
 
