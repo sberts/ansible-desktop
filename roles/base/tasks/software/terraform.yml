@@ -1,0 +1,16 @@
+- name: download terraform source
+  tags: terraform
+  get_url:
+    url: https://releases.hashicorp.com/terraform/1.0.11/terraform_1.0.11_linux_amd64.zip
+    dest: /usr/local/src/terraform_1.0.11_linux_amd64.zip
+  register: terraform_source
+
+- name: extract terraform source
+  tags: terraform
+  unarchive:
+    src: /usr/local/src/terraform_1.0.11_linux_amd64.zip
+    dest: /usr/local/src
+    remote_src: yes
+  when: terraform_source.changed
+  register: terraform_source_unpack
+
