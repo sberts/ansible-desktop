@@ -35,6 +35,17 @@
     chdir: /usr/local/src/lilyterm-0.9.9.2
   when: lilyterm_configure.changed
 
+- name: create lilyterm config directory
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: ubuntu
+    group: ubuntu
+    mode: 0770
+  loop:
+    - /home/ubuntu/.config
+    - /home/ubuntu/.config/lilyterm
+
 - name: copy lilyterm default.conf
   tags: lilyterm
   copy:
