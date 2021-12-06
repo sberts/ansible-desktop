@@ -1,2 +1,3 @@
 - block:
   - import_tasks: software/packages.yml
+  - import_tasks: software/lilyterm.yml
