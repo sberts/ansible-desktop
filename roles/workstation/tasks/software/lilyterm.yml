@@ -34,3 +34,13 @@
   args:
     chdir: /usr/local/src/lilyterm-0.9.9.2
   when: lilyterm_configure.changed
+
+- name: copy lilyterm default.conf
+  tags: lilyterm
+  copy:
+    src: lilyterm/default.conf
+    dest: /home/ubuntu/.config/lilyterm/default.conf
+    owner: ubuntu
+    group: ubuntu
+    mode: 0644
+
