@@ -1,0 +1,12 @@
+- name: download lilyterm source
+  tags: lilyterm
+  get_url:
+    url: https://lilyterm.luna.com.tw/file/lilyterm-0.9.9.2.tar.gz
+    dest: /usr/local/src/lilyterm-0.9.9.2.tar.gz
+
+- name: extract lilyterm source
+  tags: lilyterm
+  ansible.builtin.unarchive:
+    src: /usr/local/src/lilyterm-0.9.9.2.tar.gz
+    dest: /usr/local/src
+    remote_src: yes
