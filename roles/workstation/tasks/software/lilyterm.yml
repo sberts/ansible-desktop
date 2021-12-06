@@ -33,4 +33,4 @@
   shell: make && make install
   args:
     chdir: /usr/local/src/lilyterm-0.9.9.2
-  when: lilyterm_configure|changed
+  when: lilyterm_configure.changed
