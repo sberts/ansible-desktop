@@ -1,3 +1,10 @@
+- name: install lilyterm dependencies
+  tags: lilyterm
+  package:
+    name:
+      - libgtk-3-dev
+      - libvte-dev
+
 - name: download lilyterm source
   tags: lilyterm
   get_url:
@@ -18,7 +25,7 @@
   command: ./configure
   args:
     chdir: /usr/local/src/lilyterm-0.9.9.2
-  #when: lilyterm_source_unpack|changed
+  when: lilyterm_source_unpack.changed
   register: lilyterm_configure
 
 - name: install lilyterm

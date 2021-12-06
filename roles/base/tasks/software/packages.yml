@@ -3,6 +3,7 @@
   package:
     name:
       - build-essential
+      - pkg-config
       - htop
       - tmux
       - vim-nox
