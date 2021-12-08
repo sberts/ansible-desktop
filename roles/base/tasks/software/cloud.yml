@@ -16,7 +16,7 @@
 - name: download aws-cli
   tags: cloud 
   get_url:
-    url: https://https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
+    url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
     dest: /usr/local/src/awscli-exe-linux-x86_64.zip
   register: awscli_source
 
