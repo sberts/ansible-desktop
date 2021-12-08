@@ -27,10 +27,11 @@
     dest: /usr/local/src
     remote_src: yes
   when: awscli_source.changed
+  register: awscli_source_unpack
 
 - name: install aws-cli
   tags: cloud
   command: ./install
   args:
     chdir: /usr/local/src/aws
-  when: awscli_source.changed
+  when: awscli_source_unpack.changed
