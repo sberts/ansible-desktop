@@ -2,4 +2,5 @@
   lineinfile:
     path: /home/ubuntu/.config/i3/config
     line: "bindsym $mod+Return exec lilyterm"
-    regexp: '^bindsym \$mod+Return exec.*'
+    regexp: '^bindsym \$mod\+Return exec.*'
+    state: present
