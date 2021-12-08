@@ -55,3 +55,15 @@
     group: ubuntu
     mode: 0644
 
+- name: download lilyterm source
+  tags: lilyterm
+  get_url:
+    url: https://lilyterm.luna.com.tw/file/lilyterm-0.9.9.2.tar.gz
+    dest: /usr/local/src/lilyterm-0.9.9.2.tar.gz
+  register: lilyterm_source
+
+#- name: extract lilyterm wallpapers
+#  tags: lilyterm
+#  unarchive:
+#    src: lilyterm/wallpaper.tar.gz
+#    dest: /home/ubuntu

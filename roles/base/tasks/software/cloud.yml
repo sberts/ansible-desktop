@@ -1,5 +1,5 @@
 - name: download terraform source
-  tags: terraform
+  tags: cloud
   get_url:
     url: https://releases.hashicorp.com/terraform/1.0.11/terraform_1.0.11_linux_amd64.zip
     dest: /usr/local/src/terraform_1.0.11_linux_amd64.zip
@@ -12,4 +12,19 @@
     dest: /usr/local/bin
     remote_src: yes
   when: terraform_source.changed
+
+- name: download aws-cli
+  tags: cloud 
+  get_url:
+    url: https://https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
+    dest: /usr/local/src/awscli-exe-linux-x86_64.zip
+  register: awscli_source
+
+- name: extract aws-cli
+  tags: cloud
+  unarchive:
+    src: /usr/local/src/awscli-exe-linux-x86_64.zip
+    dest: /usr/local/src
+    remote_src: yes
+  when: awscli_source.changed
 
