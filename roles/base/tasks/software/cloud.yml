@@ -28,3 +28,9 @@
     remote_src: yes
   when: awscli_source.changed
 
+- name: install aws-cli
+  tags: cloud
+  command: ./install
+  args:
+    chdir: /usr/local/src/aws
+  when: awscli_source.changed
