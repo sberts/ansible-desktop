@@ -1,3 +1,4 @@
 - block:
   - import_tasks: software/packages.yml
   - import_tasks: software/lilyterm.yml
+  - import_tasks: desktop_environments/i3/keybindings.yml

@@ -11,7 +11,7 @@ TASKS:
 [ ] customize vim
 [ ] copy/paste keybindings
 [ ] setup docker
-[ ] setup aws-cli
+[X] setup aws-cli
 
 TODO:
 [ ] fix hardcoded paths for user

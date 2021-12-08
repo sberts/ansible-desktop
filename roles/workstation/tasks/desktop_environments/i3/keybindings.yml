@@ -1,0 +1,5 @@
+- name: setting i3 mod+Return terminal
+  lineinfile:
+    path: /home/ubuntu/.config/i3/config
+    line: "bindsym $mod+Return exec lilyterm"
+    regexp: "bindsym $mod+Return exec"
