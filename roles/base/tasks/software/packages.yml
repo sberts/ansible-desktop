@@ -23,7 +23,6 @@
     dest: /home/ubuntu/.vimrc
     owner: ubuntu
     group: ubuntu
-    remote_src: yes
 
 - name: install base pip packages
   tags: powerline
