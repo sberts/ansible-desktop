@@ -83,7 +83,7 @@
   command: "./resize-wp.sh 1920"
   args:
     chdir: /usr/local/bin
-  when: wallpaper_unpacked|changed
+  #when: wallpaper_unpacked.changed
   register: wallpaper_resized
 
 - name: copy lilyterm conf script
@@ -98,7 +98,7 @@
   command: "./lterm-conf.sh ubuntu"
   args:
     chdir: /usr/local/bin
-  when: wallpaper_resized|changed
+  #when: wallpaper_resized.changed
 
 - name: copy lilyterm script
   tags: lilyterm
