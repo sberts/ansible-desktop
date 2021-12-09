@@ -1,13 +1,15 @@
 # ansible-desktop
 
-This playbook will setup a Linux desktop and install our favorite tools
+The files in this repo will help setup a Linux desktop and install some software.
 
 Supported OS: Ubuntu 20.04 lts
+
+please send suggestions/feedback.
 
 TASKS:
 
 [ ] customize i3
-[ ] customize terminal emulator
+[X] customize terminal emulator
 [ ] customize vim
 [ ] copy/paste keybindings
 [ ] setup docker
