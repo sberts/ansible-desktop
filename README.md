@@ -10,13 +10,13 @@ TASKS:
 
    [ ] customize i3
    [X] customize terminal emulator
-   [ ] add powerline vim plugin
+   [X] add powerline vim plugin
    [ ] customize vim
--> [X] customize powerline (git, aws)
--> [X] copy/paste keybindings
--> [X] setup docker
+   [X] customize powerline (git, aws)
+   [X] copy/paste keybindings
+   [X] setup docker
    [X] setup aws-cli
-   [ ] setup aws bash completion
+   [X] setup aws bash completion
 
 TODO:
 [ ] fix hardcoded paths for user

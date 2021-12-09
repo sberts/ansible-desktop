@@ -16,6 +16,14 @@
       - python3-setuptools
       - nodejs
   
+- name: add .vimrc
+  tags: vim
+  copy:
+    src: vim/dotvimrc
+    dest: /home/ubuntu/.vimrc
+    owner: ubuntu
+    group: ubuntu
+
 - name: install base pip packages
   tags: powerline
   pip:
