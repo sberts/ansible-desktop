@@ -16,6 +16,11 @@
       - bpytop
       - powerline-status
 
+- name: insert powerline bindings into .bashrc
+  lineinfile:
+    path: /home/ubuntu/.bashrc
+    line: . /usr/local/lib/python3.8/dist-packages/powerline/bindings/bash/powerline.sh
+
 - name: insert powerline daemon into .bashrc
   lineinfile:
     path: /home/ubuntu/.bashrc
@@ -36,6 +41,35 @@
     dest: /home/ubuntu/.tmux.conf
     owner: ubuntu
     group: ubuntu
+    content: |
+      run-shell "powerline-daemon -q"
+      source "/usr/local/lib/python3.8/dist-packages/powerline/bindings/tmux/powerline.conf"
+
+- name: insert root powerline bindings into .bashrc
+  lineinfile:
+    path: /root/.bashrc
+    line: . /usr/local/lib/python3.8/dist-packages/powerline/bindings/bash/powerline.sh
+
+- name: insert root powerline daemon into .bashrc
+  lineinfile:
+    path: /root/.bashrc
+    line: powerline-daemon -q
+
+- name: insert root powerline bash continuation into .bashrc
+  lineinfile:
+    path: /root/.bashrc
+    line: POWERLINE_BASH_CONTINUATION=1
+
+- name: insert root powerline bash select into .bashrc
+  lineinfile:
+    path: /root/.bashrc
+    line: POWERLINE_BASH_SELECT=1
+
+- name: add root powerline tmux config
+  copy:
+    dest: /root/.tmux.conf
+    owner: root
+    group: root
     content: |
       run-shell "powerline-daemon -q"
       source "/usr/local/lib/python3.8/dist-packages/powerline/bindings/tmux/powerline.conf"

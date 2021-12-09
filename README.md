@@ -11,9 +11,11 @@ TASKS:
 [ ] customize i3
 [X] customize terminal emulator
 [ ] customize vim
+[ ] customize powerline (git, aws)
 [ ] copy/paste keybindings
 [ ] setup docker
 [X] setup aws-cli
+[ ] setup aws bash completion
 
 TODO:
 [ ] fix hardcoded paths for user
