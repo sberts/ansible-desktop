@@ -1,6 +1,6 @@
 - name: setting i3 mod+Return terminal
   lineinfile:
     path: /home/ubuntu/.config/i3/config
-    line: "bindsym $mod+Return exec lilyterm"
+    line: "bindsym $mod+Return exec lterm.sh"
     regexp: '^bindsym \$mod\+Return exec.*'
     state: present
