@@ -17,32 +17,50 @@
       - nodejs
   
 - name: install base pip packages
+  tags: powerline
   pip:
     name:
       - bpytop
       - powerline-status
 
+- name: add powerline config
+  tags: powerline
+  copy:
+    src: powerline/config.json
+    dest: /usr/local/lib/python3.8/dist-packages/powerline/config_files/config.json
+
+- name: add powerline custom shell theme
+  tags: powerline
+  copy:
+    src: powerline/custom_leftonly.json
+    dest: /usr/local/lib/python3.8/dist-packages/powerline/config_files/themes/shell/custom_leftonly.json
+
 - name: insert powerline bindings into .bashrc
+  tags: powerline
   lineinfile:
     path: /home/ubuntu/.bashrc
     line: . /usr/local/lib/python3.8/dist-packages/powerline/bindings/bash/powerline.sh
 
 - name: insert powerline daemon into .bashrc
+  tags: powerline
   lineinfile:
     path: /home/ubuntu/.bashrc
     line: powerline-daemon -q
 
 - name: insert powerline bash continuation into .bashrc
+  tags: powerline
   lineinfile:
     path: /home/ubuntu/.bashrc
     line: POWERLINE_BASH_CONTINUATION=1
 
 - name: insert powerline bash select into .bashrc
+  tags: powerline
   lineinfile:
     path: /home/ubuntu/.bashrc
     line: POWERLINE_BASH_SELECT=1
 
 - name: add powerline tmux config
+  tags: powerline
   copy:
     dest: /home/ubuntu/.tmux.conf
     owner: ubuntu
@@ -52,26 +70,31 @@
       source "/usr/local/lib/python3.8/dist-packages/powerline/bindings/tmux/powerline.conf"
 
 - name: insert root powerline bindings into .bashrc
+  tags: powerline
   lineinfile:
     path: /root/.bashrc
     line: . /usr/local/lib/python3.8/dist-packages/powerline/bindings/bash/powerline.sh
 
 - name: insert root powerline daemon into .bashrc
+  tags: powerline
   lineinfile:
     path: /root/.bashrc
     line: powerline-daemon -q
 
 - name: insert root powerline bash continuation into .bashrc
+  tags: powerline
   lineinfile:
     path: /root/.bashrc
     line: POWERLINE_BASH_CONTINUATION=1
 
 - name: insert root powerline bash select into .bashrc
+  tags: powerline
   lineinfile:
     path: /root/.bashrc
     line: POWERLINE_BASH_SELECT=1
 
 - name: add root powerline tmux config
+  tags: powerline
   copy:
     dest: /root/.tmux.conf
     owner: root

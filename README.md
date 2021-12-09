@@ -10,10 +10,11 @@ TASKS:
 
    [ ] customize i3
    [X] customize terminal emulator
+   [ ] add powerline vim plugin
    [ ] customize vim
--> [ ] customize powerline (git, aws)
+-> [X] customize powerline (git, aws)
 -> [X] copy/paste keybindings
--> [ ] setup docker
+-> [X] setup docker
    [X] setup aws-cli
    [ ] setup aws bash completion
 
