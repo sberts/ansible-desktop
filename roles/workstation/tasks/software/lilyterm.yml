@@ -80,7 +80,7 @@
 
 - name: resize lilyterm wallpapers
   tags: lilyterm
-  command: ./resizewp.sh
+  command: ./resize-wp.sh
   args:
     chdir: /usr/local/bin
   when: wallpaper_unpacked.changed
