@@ -2,5 +2,7 @@
 
 PATH='/bin:/usr/bin'
 
+WIDTH=${1:-1920}
+
 cd /usr/local/share/wp
-convert '*.jpg['$1'x]' resized%d.jpg
+convert '*.jpg['$WIDTH'x]' resized%d.jpg
