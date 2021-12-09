@@ -24,6 +24,31 @@
     owner: ubuntu
     group: ubuntu
 
+- name: create vim directories
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: ubuntu
+    group: ubuntu
+    mode: 0770
+  loop:
+    - /home/ubuntu/.vim
+    - /home/ubuntu/.vim/autoload
+    - /home/ubuntu/.vim/bundle
+
+- name: install pathogen
+  tags: vim
+  get_url:
+    url: https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+    dest: /home/ubuntu/.vim/autoload/pathogen.vim
+
+- name: install solarized
+  git:
+    repo: git://github.com/altercation/vim-colors-solarized.git
+    dest: /home/ubuntu/.vim/bundle/vim-colors-solarized
+    update: yes
+    accept_hostkey: yes
+
 - name: install base pip packages
   tags: powerline
   pip:
