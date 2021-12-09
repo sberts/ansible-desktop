@@ -1,0 +1,4 @@
+- name: user bin folder
+  file:
+    path: /home/ubuntu/bin
+    state: directory

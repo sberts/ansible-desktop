@@ -55,15 +55,54 @@
     group: ubuntu
     mode: 0644
 
-- name: download lilyterm source
+- name: download wallpaper
   tags: lilyterm
   get_url:
-    url: https://lilyterm.luna.com.tw/file/lilyterm-0.9.9.2.tar.gz
-    dest: /usr/local/src/lilyterm-0.9.9.2.tar.gz
-  register: lilyterm_source
+    url: https://sberts.com/wp.tar.gz
+    dest: /usr/local/share
+  register: wallpaper_download
 
-#- name: extract lilyterm wallpapers
-#  tags: lilyterm
-#  unarchive:
-#    src: lilyterm/wallpaper.tar.gz
-#    dest: /home/ubuntu
+- name: extract lilyterm wallpapers
+  tags: lilyterm
+  unarchive:
+    src: /usr/local/share/wp.tar.gz
+    dest: /usr/local/share
+    remote_src: yes
+  when: wallpaper_download.changed
+  register: wallpaper_unpacked
+
+- name: copy resize wallpaper script
+  tags: lilyterm
+  copy:
+    src: lilyterm/resize-wp.sh
+    dest: /usr/local/bin
+    mode: '755'
+
+- name: resize lilyterm wallpapers
+  tags: lilyterm
+  command: ./resizewp.sh
+  args:
+    chdir: /usr/local/bin
+  when: wallpaper_unpacked.changed
+  register: wallpaper_resized
+
+- name: copy lilyterm conf script
+  tags: lilyterm
+  copy:
+    src: lilyterm/lterm-conf.sh
+    dest: /usr/local/bin
+    mode: '755'
+
+- name: generate lilyterm conf files
+  tags: lilyterm
+  command: ./lterm-conf.sh
+  args:
+    chdir: /usr/local/bin
+  when: wallpaper_resized.changed
+
+- name: copy lilyterm script
+  tags: lilyterm
+  copy:
+    src: lilyterm/lterm.sh
+    dest: /usr/local/bin
+    mode: '755'
