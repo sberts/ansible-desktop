@@ -19,7 +19,7 @@
 - name: add .vimrc
   tags: vim
   copy:
-    src: vim/dotvimrc
+    src: vim/dot-vimrc
     dest: /home/ubuntu/.vimrc
     owner: ubuntu
     group: ubuntu
