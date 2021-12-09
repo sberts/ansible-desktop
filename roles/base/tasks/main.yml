@@ -2,3 +2,4 @@
   - import_tasks: software/user.yml
   - import_tasks: software/packages.yml
   - import_tasks: software/cloud.yml
+  - import_tasks: software/docker.yml

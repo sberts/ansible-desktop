@@ -3,11 +3,17 @@
   package:
     name:
       - build-essential
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - software-properties-common
       - pkg-config
       - htop
       - tmux
       - vim-nox
       - python3-pip
+      - virtualenv
+      - python3-setuptools
       - nodejs
   
 - name: install base pip packages

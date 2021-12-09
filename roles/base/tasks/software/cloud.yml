@@ -6,7 +6,7 @@
   register: terraform_source
 
 - name: extract terraform source
-  tags: terraform
+  tags: cloud
   unarchive:
     src: /usr/local/src/terraform_1.0.11_linux_amd64.zip
     dest: /usr/local/bin
