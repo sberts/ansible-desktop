@@ -35,3 +35,9 @@
   args:
     chdir: /usr/local/src/aws
   when: awscli_source_unpack.changed
+
+- name: add aws cli command completion
+  tags: cloud
+  lineinfile:
+    path: /home/ubuntu/.bashrc
+    line: complete -C '/usr/local/bin/aws_completer' aws
