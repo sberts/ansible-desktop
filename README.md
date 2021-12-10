@@ -4,19 +4,24 @@ The files in this repo will help setup a Linux desktop and install my favorite s
 
 Supported OS: Ubuntu 20.04 lts
 
-Please send suggestions/feedback.
+Feedback is welcome.
 
 TASKS:
 
-   [ ] customize i3
-   [X] customize terminal emulator
-   [X] add powerline vim plugin
-   [ ] customize vim
-   [X] customize powerline (git, aws)
-   [X] copy/paste keybindings
-   [X] setup docker
-   [X] setup aws-cli
-   [X] setup aws bash completion
+[X] customize terminal emulator
+[X] add powerline vim plugin
+[X] install vim solarized
+[ ] install vim nerdtree
+[X] customize powerline (git, aws)
+[X] copy/paste keybindings
+[X] setup docker
+[X] setup aws-cli
+[X] setup aws bash completion
+[ ] add aws-env
+[ ] add chrome bookmarks
+[X] add openstack cli
+[ ] add kubecli
+[ ] add libre office
 
 TODO:
 [ ] fix hardcoded paths for user

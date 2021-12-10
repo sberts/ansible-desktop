@@ -1,3 +1,9 @@
+- name: install cloudpackages
+  tags: cloud
+  package:
+    name:
+      - python3-openstackclient
+
 - name: download terraform source
   tags: cloud
   get_url:
