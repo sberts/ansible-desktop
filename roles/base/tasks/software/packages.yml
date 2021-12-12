@@ -14,8 +14,6 @@
       - python3-pip
       - virtualenv
       - python3-setuptools
-      - nodejs
-      - npm
   
 - name: add .vimrc
   tags: vim
@@ -138,3 +136,22 @@
     content: |
       run-shell "powerline-daemon -q"
       source "/usr/local/lib/python3.8/dist-packages/powerline/bindings/tmux/powerline.conf"
+
+- name: "Add nodejs apt key"
+  tags: nodejs
+  apt_key:
+    url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
+    state: present
+
+- name: "Add nodejs 16.x ppa for apt repo"
+  tags: nodejs
+  apt_repository:
+    repo: deb https://deb.nodesource.com/node_16.x focal main
+    update_cache: yes
+
+- name: "Install nodejs"
+  tags: nodejs
+  apt:
+    update_cache: yes
+    name: nodejs
+    state: present
