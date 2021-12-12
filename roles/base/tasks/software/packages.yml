@@ -15,6 +15,7 @@
       - virtualenv
       - python3-setuptools
       - nodejs
+      - npm
   
 - name: add .vimrc
   tags: vim
