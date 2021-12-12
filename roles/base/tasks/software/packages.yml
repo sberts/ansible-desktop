@@ -50,6 +50,14 @@
     update: yes
     accept_hostkey: yes
 
+- name: install nerdtree
+  tags: vim
+  git:
+    repo: https://github.com/preservim/nerdtree.git
+    dest: /home/ubuntu/.vim/bundle/nerdtree
+    update: yes
+    accept_hostkey: yes
+
 - name: install base pip packages
   tags: powerline
   pip:
