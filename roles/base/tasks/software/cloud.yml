@@ -57,6 +57,11 @@
     dest: /usr/local/src/aws-sam-cli-linux-x86_64.zip
   register: awssamcli_source
 
+- name: create sam-installation directory
+  file:
+    path: /usr/local/src/sam-installation
+    state: directory
+
 - name: extract aws-sam-cli
   tags: cloud
   unarchive:
