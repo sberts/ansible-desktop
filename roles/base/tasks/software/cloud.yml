@@ -49,3 +49,27 @@
   lineinfile:
     path: /home/ubuntu/.bashrc
     line: complete -C '/usr/local/bin/aws_completer' aws
+
+- name: download aws-sam-cli
+  tags: cloud 
+  get_url:
+    url: https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip
+    dest: /usr/local/src/aws-sam-cli-linux-x86_64.zip
+  register: awssamcli_source
+
+- name: extract aws-sam-cli
+  tags: cloud
+  unarchive:
+    src: /usr/local/src/aws-sam-cli-linux-x86_64.zip
+    dest: /usr/local/src/sam-installation
+    remote_src: yes
+  when: awssamcli_source.changed
+  register: awssamcli_source_unpack
+
+- name: install aws-sam-cli
+  tags: cloud
+  command: ./install
+  args:
+    chdir: /usr/local/src/sam-installation
+  when: awssamcli_source_unpack.changed
+

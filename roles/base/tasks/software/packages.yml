@@ -58,6 +58,14 @@
     update: yes
     accept_hostkey: yes
 
+- name: install vim-devicons
+  tags: vim
+  git:
+    repo: https://github.com/ryanoasis/vim-devicons.git
+    dest: /home/ubuntu/.vim/bundle/vim-devicons
+    update: yes
+    accept_hostkey: yes
+
 - name: install base pip packages
   tags: powerline
   pip:
