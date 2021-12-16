@@ -61,6 +61,8 @@
   file:
     path: /usr/local/src/sam-installation
     state: directory
+  when: awssamcli_source.changed
+  register: awssamcli_directory
 
 - name: extract aws-sam-cli
   tags: cloud
@@ -68,7 +70,7 @@
     src: /usr/local/src/aws-sam-cli-linux-x86_64.zip
     dest: /usr/local/src/sam-installation
     remote_src: yes
-  when: awssamcli_source.changed
+  when: awssamcli_directory.changed
   register: awssamcli_source_unpack
 
 - name: install aws-sam-cli
