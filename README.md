@@ -4,6 +4,12 @@ The files in this repo will help setup a Linux desktop and install my favorite s
 
 Supported OS: Ubuntu 20.04 lts
 
+INSTALL:
+
+# apt install ansible
+
+# ansible-pull -U https://github.com/sberts/ansible-desktop.git
+
 Feedback is welcome.
 
 TASKS:
