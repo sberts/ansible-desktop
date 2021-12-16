@@ -3,8 +3,8 @@
   package:
     name:
       - python3-openstackclient
-      - python3-neutronstackclient
-      - python3-glancestackclient
+      - python3-neutronclient
+      - python3-glanceclient
 
 - name: download terraform source
   tags: cloud
