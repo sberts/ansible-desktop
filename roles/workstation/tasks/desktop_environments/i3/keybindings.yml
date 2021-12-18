@@ -1,3 +1,15 @@
+- name: create i3 directories
+  tags: vim
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: ubuntu
+    group: ubuntu
+    mode: 0770
+  loop:
+    - /home/ubuntu/.config
+    - /home/ubuntu/.config/i3
+
 - name: setting i3 mod+Return terminal
   lineinfile:
     path: /home/ubuntu/.config/i3/config
