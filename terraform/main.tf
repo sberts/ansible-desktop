@@ -47,7 +47,7 @@ resource "openstack_compute_instance_v2" "workstation" {
 resource "openstack_blockstorage_volume_v3" "workstation" {
   region      = "RegionOne"
   name        = "workstation_volume_1"
-  size        = 100
+  size        = 40
 }
 
 resource "openstack_compute_volume_attach_v2" "workstation" {
