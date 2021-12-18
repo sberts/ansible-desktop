@@ -19,5 +19,8 @@
     group: ubuntu
     mode: 0644
 
-- name: start graphical desktop on boot
+- name: start graphical desktop
+  command: systemctl isolate graphical.target
+
+- name: set graphical desktop to start on boot
   command: systemctl set-default graphical.target
