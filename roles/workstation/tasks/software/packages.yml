@@ -11,5 +11,22 @@
       - imagemagick
 
 - name: install chrome
+  tags: chrome
   apt:
     deb: https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+- name: install powerline fonts
+  tags: powerline 
+  git:
+    repo: git://github.com/powerline/fonts.git
+    dest: /usr/local/src/powerline-fonts
+    update: yes
+    accept_hostkey: yes
+  register: fonts_source
+
+- name: install powerline fonts
+  command: ./install.sh
+  args:
+    chdir: /usr/local/src/powerline-fonts
+  when: fonts_source.changed
+

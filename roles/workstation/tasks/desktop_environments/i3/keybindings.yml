@@ -1,5 +1,5 @@
 - name: create i3 directories
-  tags: vim
+  tags: i3
   file:
     path: "{{ item }}"
     state: directory
@@ -10,9 +10,12 @@
     - /home/ubuntu/.config
     - /home/ubuntu/.config/i3
 
-- name: setting i3 mod+Return terminal
-  lineinfile:
-    path: /home/ubuntu/.config/i3/config
-    line: "bindsym $mod+Return exec lterm.sh"
-    regexp: '^bindsym \$mod\+Return exec.*'
-    state: present
+- name: copy i3 config
+  tags: i3
+  copy:
+    src: i3/config
+    dest: /home/ubuntu/.config/i3/config
+    owner: ubuntu
+    group: ubuntu
+    mode: 0644
+
