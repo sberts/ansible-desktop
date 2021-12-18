@@ -9,6 +9,7 @@
       - jmtpfs
       - fonts-powerline
       - imagemagick
+      - arandr
 
 - name: install chrome
   tags: chrome
@@ -29,4 +30,5 @@
   args:
     chdir: /usr/local/src/powerline-fonts
   when: fonts_source.changed
-
+  become: true
+  become_user: ubuntu
