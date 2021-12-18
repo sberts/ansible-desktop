@@ -1,6 +1,8 @@
-# ansible-desktop
+# linux-desktop
 
-The files in this repo will help setup a Linux desktop and install my favorite software.
+This repo contains ansible and terraform files to help automate the setup a Linux desktop and install my favorite software.
+
+BACKUP ALL OF YOUR DATA BEFORE USING THESE FILES.
 
 Supported OS: Ubuntu 20.04 lts
 
@@ -12,24 +14,12 @@ INSTALL:
 
 Feedback is welcome.
 
-TASKS:
+TO-DO:
 
-[X] customize terminal emulator
-[X] add powerline vim plugin
-[X] install vim solarized
-[ ] install vim nerdtree
-[X] customize powerline (git, aws)
-[X] copy/paste keybindings
-[X] setup docker
-[X] setup aws-cli
-[X] setup aws bash completion
 [ ] add aws-env
 [ ] add chrome bookmarks
-[X] add openstack cli
 [ ] add kubecli
 [ ] add libre office
-
-TODO:
 [ ] fix hardcoded paths for user
 [ ] just black theme for chrome
 [ ] dark reader extension for chrome

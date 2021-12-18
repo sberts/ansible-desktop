@@ -41,7 +41,7 @@ resource "openstack_compute_instance_v2" "workstation" {
     name = var.network
   }
 
-  user_data = "${file("script.sh")}"  
+  user_data = "${file("startup.sh")}"  
 }
 
 resource "openstack_blockstorage_volume_v3" "workstation" {

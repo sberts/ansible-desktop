@@ -1,7 +1,9 @@
 #!/bin/bash
 
+echo starting $(date) >> /tmp/startup.log
+
 apt update && apt upgrade -y && apt install ansible -y && \
-  ansible-pull -U https://github.com/sberts/ansible-desktop.git
+  ansible-pull -U https://github.com/sberts/linux-desktop.git
 
 mkdir /data
 if ! mount /dev/vdb /data; then
@@ -9,4 +11,4 @@ if ! mount /dev/vdb /data; then
   mount /dev/vdb /data
 fi
 
-echo date > /tmp/script.log
+echo finished $(date) >> /tmp/startup.log
