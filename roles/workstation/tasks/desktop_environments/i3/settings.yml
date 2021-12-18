@@ -19,3 +19,5 @@
     group: ubuntu
     mode: 0644
 
+- name: start graphical desktop on boot
+  command: systemctl set-default graphical.target
