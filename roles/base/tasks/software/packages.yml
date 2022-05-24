@@ -46,7 +46,7 @@
 - name: install solarized
   tags: vim
   git:
-    repo: git://github.com/altercation/vim-colors-solarized.git
+    repo: https://github.com/altercation/vim-colors-solarized.git
     dest: /home/ubuntu/.vim/bundle/vim-colors-solarized
     update: yes
     accept_hostkey: yes
